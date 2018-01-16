@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import MapView from 'react-native-maps';
 import { NONEXISTENT_EXPORT as IMPORTED_VALUE } from './helper.js';
 
 const instructions = Platform.select({
