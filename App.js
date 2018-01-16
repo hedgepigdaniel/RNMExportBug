@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import { NONEXISTENT_EXPORT as IMPORTED_VALUE } from './helper.js';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -21,19 +22,24 @@ const instructions = Platform.select({
 
 export default class App extends Component<{}> {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
+    if (IMPORTED_VALUE) {
+      return (
+        <View style={styles.container}>
+          <Text style={styles.welcome}>
+            Hooray! The import is truthy!
+          </Text>
+        </View>
+      );
+    } else {
+      return (
+        <View style={styles.container}>
+          <Text style={styles.welcome}>
+            Oops! The import is falsy because it doesn't exist!
+            Wasn't there a compile error?
+          </Text>
+        </View>
+      );
+    }
   }
 }
 
