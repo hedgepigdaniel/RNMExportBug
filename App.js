@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 import MapView from 'react-native-maps';
-import { NONEXISTENT_EXPORT as IMPORTED_VALUE } from './helper.js';
+import { EXPORTED_VALUE as IMPORTED_VALUE } from './helper.js';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
